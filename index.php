@@ -1,9 +1,12 @@
 <?php
 
     require_once 'vendor/autoload.php';
+    
     MercadoPago\SDK::setClientId("8131526712381965");
-MercadoPago\SDK::setClientSecret("N9WwN6Ru7ke9cBAS7F1ITtUCOToNgrKN");
-    // SDK Version >= 0.5.0
+    MercadoPago\SDK::setClientSecret("N9WwN6Ru7ke9cBAS7F1ITtUCOToNgrKN");
+    MercadoPago\SDK::setAccessToken("TEST-8131526712381965-100207-ecaccd3929d0adac787444c261282027-66839567");
+    
+// SDK Version >= 0.5.0
 
 $mp = new MP("ACCESS_TOKEN");
 
