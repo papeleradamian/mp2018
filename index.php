@@ -2,21 +2,18 @@
 
     require_once 'vendor/autoload.php';
 
-    MercadoPago\SDK::setAccessToken("TEST-6883424594190986-071506-05714c036faa6ff245e70a42dba20d92__LB_LC__-66839567");
+    // SDK Version >= 0.5.0
 
-    $payment = new MercadoPago\Payment();
+$mp = new MP("ACCESS_TOKEN");
 
-    $payment->transaction_amount = 141;
-    $payment->token = "YOUR_CARD_TOKEN";
-    $payment->description = "Ergonomic Silk Shirt";
-    $payment->installments = 1;
-    $payment->payment_method_id = "visa";
-    $payment->payer = array(
-      "email" => "larue.nienow@hotmail.com"
+$request = array(
+        "uri" => "/v1/account/settlement_report",
+        "data" => array(
+            "begin_date" => "2018-11-01T00:00:00Z",
+            "end_date" => "2018-11-04T00:00:00Z"
+        )
     );
 
-    $payment->save();
-
-    echo $payment->status;
+$mp->post($request);
 
   ?>
