@@ -1,3 +1,12 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>prueba api</title>
+</head>
+
+<body>
+
 <?php
 session_start();
 require '../Meli/meli.php';
@@ -102,3 +111,8 @@ if($_GET['code']) {
 } else {
 	echo '<a href="' . $meli->getAuthUrl($redirectURI, Meli::$AUTH_URL['MLB']) . '">Login using MercadoLibre oAuth 2.0</a>';
 }
+
+
+  
+</body>
+</html>
